@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//localStoarge is a storage to save data in browser 
+
+ localStorage.setItem("name","samir");
+ localStorage.setItem("age",25);
+ const str = localStorage.getItem("name","age");
+ console.log(str);
+// localStorage.clear()
+
+
+
+const student = {
+    name:"mohammad samir",
+    age:25,
+    city:"kolkata"
+};
+
+
+// set data in localStorage
+localStorage.setItem("data",JSON.stringify(student));
+
+// get data from localStorage
+const str2 = localStorage.getItem("data");
+console.log(JSON.parse(str2));
+
+// remove data from localStorage
+const remove = localStorage.removeItem("data")
+console.log(remove);
+
+//sessionStorage is a storage to save data in browser for limited time until session is not closed
+sessionStorage.setItem("age",25);
+const str1 = sessionStorage.getItem("age");
+console.log(str1);
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

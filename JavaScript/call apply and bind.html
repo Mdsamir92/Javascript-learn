@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Apply and Bind</title>
+</head>
+<body>
+
+    <!-- whenever object attach to function we use call apply and bind. -->
+
+
+  <script> 
+
+const  person={
+    firstname:"mohammad",
+    lastname:" samir",
+    age:24,
+};
+const  person1={
+    firstname:" md",
+    lastname:" sam",
+    age:25,
+};
+function sayhello(c){
+ console.log("hello! i am " + this.firstname + this.lastname + " and age is "+ this.age 
+ +" and " + c)}
+
+sayhello.call(person,"course is frontend"); //call method takes argument separately
+sayhello.apply(person1,["course is web development"]);//apply takes argument as an array
+let hello =  sayhello.bind(person)
+hello("course is backend"); 
+//bind method takes an object as an first argument
+//and creates a new function 
+
+
+
+</script> 
+
+</body>
+</html>

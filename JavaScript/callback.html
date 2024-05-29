@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback</title>
+</head>
+<body>
+    <script>
+
+ //A callback is a function passed as an argument to another function
+
+function sayHello(){
+    console.log("hello");
+} 
+function sayHi(msg){
+    console.log(msg);
+} 
+function add(num1,num2,callback){
+    // sayHi();
+    console.log(num1 + num2);
+    callback();
+    
+}
+add(10,10,sayHello);
+
+add(() => sayHi("hiii"));
+add(1,2, () => sayHi("hiii"));
+
+add(10,30,()=>
+    console.log("bye..")
+);
+
+//Another example Asynchronus callback
+ 
+
+console.log("1st apps call");
+
+ function email(callback){
+    setTimeout(()=>{
+        console.log("email end");
+        callback();
+    },2000);
+   
+}
+
+function  login(){
+    setTimeout(()=>{
+    console.log("login end");
+},1000);
+}
+
+email(login);
+// login();
+console.log("last call")
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <script>
+
+        // promise return future value either our promise is resolve or reject
+       // we  can use then method for successfully resolve or catch method use for any error 
+
+        let promise= new Promise((resolve,reject)=>{
+            
+          let complete=true;
+            if(complete){
+                setTimeout(()=>{
+                    console.log("i love u");
+                },2000);
+            resolve("i am successful resolve..");
+            }else{
+                reject("i am  reject..");
+            }     
+           });
+
+        promise.then((res)=>{
+            console.log(res)
+             
+        })
+        .catch((error)=>{
+            console.log(error)                                                                    
+        });
+        // console.log(promise); 
+    </script>
+</body>
+</html>

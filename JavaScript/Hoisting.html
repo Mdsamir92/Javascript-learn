@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting</title>
+</head>
+<body>
+    <!-- hoisting is javascript default behaviour of moving declarations value at the top
+        ... in hoisting a variable can be used before it has been declared 
+    -->
+    <script>
+        //strict mode strictly check the variable is defines using keyword or not
+        // "use strict"
+         z = 4;
+        console.log(z); //error because they are not use any keyword
+
+        sam();//call than declare
+        function sam(){
+            console.log("hello world");
+        }
+
+        function samir(){
+            console.log(a);
+            var a=10;//undefined 
+   
+        }
+        samir();
+    
+
+     x=7; //assign 7 to x
+    console.log(x);
+    var x; //declare x 7
+
+    console.log(a)
+    var a = 10; //undefined
+
+   
+    // y=10;
+    // console.log(y);
+    // let y; // ReferenceError: Cannot access 'y' before initialization
+
+
+
+</script>
+
+</body>
+</html>

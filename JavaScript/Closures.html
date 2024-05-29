@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body>
+    <script>
+     // a closure are  function inside  function.
+     //A function with lexical scope its called closure
+
+    //  a function can access all variables inside the function
+    //  like this,
+
+//     function myfunc(){
+//     let a=5;
+//     return a;
+// }
+// console.log(myfunc());
+
+ //  a function can access all variables outside the function
+    //  like this,
+    //this is called lexical scope
+
+//     let a=10;
+// function myfunc(){
+//     return a;
+// }
+// console.log(myfunc());
+
+
+    function clsr(){
+        let a= 10;
+         return function inner(){
+            return a*a;
+        }
+    }
+
+  let inner = clsr();
+  console.log(inner());
+
+
+  function sum(a){
+    console.log("closure " + a);
+    let b = 10;
+    return function sum1(c){
+         return a + b + c;
+    }
+  }
+  let sum1 = sum(5);
+  console.log(sum1(15))
+
+    </script>
+</body>
+</html>

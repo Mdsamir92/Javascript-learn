@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+//we simply wrap a function inside a function and return it until our arguments is not end.
+
+
+        // currying using normal function 
+        let cur = function (a) {
+            return function (b) {
+                return function (c) {
+                    return a + b + c;
+                }
+            }
+        }
+        let curry = cur(1)(3)(3)
+        console.log(curry)
+
+
+        // currying using arrow function 
+        const curr = (a) => (b) => (c) => a + b + c;
+
+        let carry = curr(3)(3)(3)
+        console.log(carry);
+
+        //infinite curry
+        function add(a) {
+            return function (b) {
+                if (b) return add(a + b);
+                return a;
+            }
+        }
+        console.log(add(1)(2)(3)(4)(4)()) //6
+
+    </script>
+</body>
+
+</html>
